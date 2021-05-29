@@ -6,6 +6,8 @@ const {
   addBookHandler,
   getAllBooksHandler,
   getBookByIdHandler,
+  editBookByIdHandler,
+  deleteBookByIdHandler,
 } = require('./handler/mainHandler');
 
 
@@ -27,6 +29,18 @@ const routes = [
     method: 'GET',
     path: '/books/{bookId}',
     handler: getBookByIdHandler,
+  },
+  {
+    /** Kriteria 4 : API dapat mengubah data buku */
+    method: 'PUT',
+    path: '/books/{bookId}',
+    handler: editBookByIdHandler,
+  },
+  {
+    /** Kriteria 5 : API dapat menghapus buku */
+    method: 'DELETE',
+    path: '/books/{bookId}',
+    handler: deleteBookByIdHandler,
   },
 ];
 
